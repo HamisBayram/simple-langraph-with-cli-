@@ -1,22 +1,82 @@
-# Langraph Application with CLI using Docker
+# LangGraph CLI Application
 
-This is a pure Langraph application with CLI support, containerized using Docker.
+A simple LangGraph implementation with a Command Line Interface (CLI) for processing inputs through a LangGraph workflow.
 
-## Prerequisites
+## Features
 
-- Node.js (v18+)
-- Docker
-- Docker Compose
+- Simple LangGraph workflow definition`
+- CLI interface for easy interaction
+- TypeScript implementation with compiled JavaScript output
 
 ## Installation
 
-1. Clone the repository
-2. Run `npm install`
-3. Build the Docker image: `docker-compose build`
+1. Clone this repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Build the project:
+   ```bash
+   npm run build
+   ```
 
 ## Usage
 
-### Running the application
+### As a CLI Tool
+
+After installing, you can use the CLI in several ways:
+
+1. Run directly with Node:
+   ```bash
+   node dist/cli.js process "your input here"
+   ```
+
+2. Install globally and run as a command:
+   ```bash
+   npm install -g .
+   langraph-cli process "your input here"
+   ```
+
+3. Use the npm script:
+   ```bash
+   npm run cli -- process "your input here"
+   ```
+
+### Development Commands
+
+- Start the main application:
+  ```bash
+  npm start
+  ```
+
+- Run in development mode (using ts-node):
+  ```bash
+  npm run dev
+  ```
+
+- Run CLI in development mode:
+  ```bash
+  npm run dev:cli
+  ```
+
+## Example Output
 
 ```bash
-docker-compose up
+$ langraph-cli process "Hello world"
+Result: Processed: Hello world
+```
+
+## Project Structure
+
+- `agent.ts` - Contains the LangGraph workflow definition
+- `cli.ts` - CLI interface implementation
+- `main.ts` - Main application entry point
+- `dist/` - Compiled JavaScript files (auto-generated)
+
+## Dependencies
+
+- @langchain/core
+- @langchain/langgraph
+- commander (for CLI)
+- zod (for schema validation)
+- TypeScript (for development)
