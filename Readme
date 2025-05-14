@@ -1,0 +1,22 @@
+# Langraph Application with CLI using Docker
+
+This is a pure Langraph application with CLI support, containerized using Docker.
+
+## Prerequisites
+
+- Node.js (v18+)
+- Docker
+- Docker Compose
+
+## Installation
+
+1. Clone the repository
+2. Run `npm install`
+3. Build the Docker image: `docker-compose build`
+
+## Usage
+
+### Running the application
+
+```bash
+docker-compose up
